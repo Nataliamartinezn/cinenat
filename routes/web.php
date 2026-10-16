@@ -13,3 +13,8 @@ Route::view('profile', 'profile')
     ->name('profile');
 
 require __DIR__.'/auth.php';
+
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {
+
+});
